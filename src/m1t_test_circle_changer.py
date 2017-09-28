@@ -92,22 +92,6 @@ def is_implemented(circle_changer_method, expected_lines=2):
 
     return len(lines_left) > expected_lines
 
-#     # [OLDER APPROACH} There is probably a better way to do this...
-#     method = getattr(m1.CircleChanger, circle_changer_method)
-#     source = inspect.getsource(method)
-#
-#     docstring = re.search(r'""".*"""', source, re.DOTALL)
-#     code_wo_docstring = source.replace(docstring.group(0), '')
-#     code_wo_def = re.sub(r'def[^:]*:', '', code_wo_docstring)
-#     code_wo_comments = re.sub(r'#.*$', '', code_wo_def, re.MULTILINE)
-#     lines_of_code = code_wo_comments.splitlines()
-#     count = 0
-#     for line in lines_of_code:
-#         if line.strip() == '':
-#             count = count + 1
-# #     print(circle_changer_method, len(lines_of_code), count)
-#     return len(lines_of_code) - count > expected_lines
-
 
 def start_drawing(title=None):
     global WINDOW
